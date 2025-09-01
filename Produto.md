@@ -3,21 +3,20 @@ classDiagram
   class Produto {
   +preco: float
   +quantidade: int
-  -tipoProduto: int
-  -marca: string
   + mostrarValor(): float
 }
   class Instrumento {
-  - tipoInstrumento: string
   - cor: string
   - tamanho: float
   - peso: float
+  - marca: string
 }
   class Acessório {
-  - tipoAcessório: string
+  - nome: string
   - cor: string
   - tamanho: string
   - peso: float
+  - marca: string
   }
 Produto <|-- Instrumento
 Produto <|-- Acessório
