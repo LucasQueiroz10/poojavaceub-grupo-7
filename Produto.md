@@ -1,8 +1,7 @@
 ```mermaid
 classDiagram
   class Produto {
-  +preco: float
-  +quantidade: int
+  -preco: float
   + mostrarValor(): float
 }
   class Instrumento {
@@ -11,15 +10,13 @@ classDiagram
   - peso: float
   - marca: string
 }
-  class Acessório {
+  class Acessorio {
   - nome: string
   - cor: string
   - tamanho: string
   - peso: float
   - marca: string
   }
-Produto <|-- Instrumento
-Produto <|-- Acessório
 
   class Corda {
   - nome: string
@@ -34,8 +31,10 @@ Produto <|-- Acessório
   + produzirSom(): void
 }
 
-Instrumento <|-- Corda
-Instrumento <|-- Metal
-Instrumento <|-- Percussao
 
+Instrumento "1" o-- "*" Metal: contém
+Instrumento "1" o-- "*" Percussao: contém
+Instrumento "1" o-- "*" Corda: contém
+Produto "1" *-- "1" Instrumento: possui
+Produto "1" *-- "1" Acessorio: possui
 ```
